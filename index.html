@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Level Artists</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+	<!-- Vendor js -->
+	<script type="text/javascript" src="styles/vendor/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="styles/vendor/js/tether-1.3.3.min.js"></script>
+	<script type="text/javascript" src="styles/vendor/js/bootstrap-v4-anpha6.min.js"></script>
+	<script type="text/javascript" src="styles/vendor/js/progressbar.min.js"></script>
+	<!-- Custom js -->
+	<script type="text/javascript" src="styles/custom/v1/js/main.js"></script>
+
+	<!-- Vendor css -->
+	<link rel="stylesheet" type="text/css" href="styles/vendor/css/bootstrap-v4-anpha6.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/vendor/css/font-awesome-4.7.0.min.css">
+	<!-- Custom css -->
+	<link rel="stylesheet" type="text/css" href="styles/custom/v1/css/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/custom/v1/css/main-media.css">
+</head>
+<body>
+	<header id="header">
+		<div class="container">
+			<div class="row">
+				<div class="header-inner w-100">
+					<nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarHeaderLink" aria-controls="navbarHeaderLink" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<a class="navbar-brand" id="logo" href="#"><img src="styles/custom/v1/images/logo.svg"></a>
+
+						<div class="collapse navbar-collapse" id="navbarHeaderLink">
+							<ul class="navbar-nav ml-auto">
+								<li class="nav-item">
+									<a class="nav-link linkScroll" data-target="sectionAbout" href="#"><span>About</span></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link linkScroll" data-target="sectionHowItWork" href="#"><span>Our Artists</span></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link linkScroll" data-target="sectionTeam" href="#"><span>The team</span></a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="headerFixed" section="1">
+		<div class="container">
+			<div class="row">
+				<div class="fixedHeaderContent w-100 clearfix">
+					<a href="#" id="fixedLogo" class="linkScroll" data-target="header">
+						<img src="styles/custom/v1/images/v_drk.svg">
+						<img class="imgLogoWhite" src="styles/custom/v1/images/logo_v_white.svg">
+					</a>
+					<button data-target="getInTouchForm" class="btnNormal btnGetInTouch linkScroll">GET IN TOUCH</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<aside>
+		<a class="linkScroll" data-target="sectionAbout" href="#">About</a>
+		<a class="linkScroll" data-target="sectionHowItWork" href="#">Our Artists</a>
+		<a class="linkScroll" data-target="sectionTeam" href="#">The team</a>
+	</aside>
+
+	<div id="pageDown" data-section="1"></div>
+
+	<!-- <div id="media">
+		<div class="wrapMedia">
+			<div class="media media1"></div>
+			<div class="media media2"></div>
+			<div class="media media3"></div>
+		</div>
+	</div> -->
+
+	<div id="carouselVideo" class="bannerSlide">
+		<!-- <ol class="carousel-indicators">
+			<li data-slide-to="0" class="active"></li>
+			<li data-slide-to="1"></li>
+			<li data-slide-to="2"></li>
+			<li data-slide-to="3"></li>
+		</ol> -->
+		<div class="carousel-inner">
+			<div class="carousel-item" slide-id="0" style="opacity: 1; z-index: 2;">
+				<video src="styles/custom/v1/videos/home01.mp4" autoplay loop></video>
+				<div class="carouselCaption">
+					<h1>Bringing the best to stage.</h1>
+					<!-- <h2></h2> -->
+					<button class="btn btn-normal btn-primary btn-lg btnBlue btnNormal linkScroll" data-target="getInTouchForm">GET IN TOUCH</button>
+				</div>
+			</div>
+			<!-- <div class="carousel-item " slide-id="1" style="opacity: 0;">
+				<video src="styles/custom/v1/videos/demo.mp4"></video>
+				<div class="carouselCaption">
+					<h1>YOUR CONSUMER IS YOUR NEW CREATIVE</h1>
+					<h2>Share the videos of your audience</h2>
+					<button class="btn btn-normal btn-primary btn-lg btnBlue btnNormal linkScroll" data-target="getInTouchForm">GET IN TOUCH</button>
+				</div>
+			</div>
+			<div class="carousel-item" slide-id="2" style="opacity: 0;">
+				<video src="styles/custom/v1/videos/Heymarket.mp4"></video>
+				<div class="carouselCaption">
+					<h1>YOUR CONSUMER IS YOUR NEW CREATIVE</h1>
+					<h2>Share the videos of your audience</h2>
+					<button class="btn btn-normal btn-primary btn-lg btnBlue btnNormal linkScroll" data-target="getInTouchForm">GET IN TOUCH</button>
+				</div>
+			</div>
+			<div class="carousel-item" slide-id="3" style="opacity: 0;">
+				<video src="styles/custom/v1/videos/demo.mp4"></video>
+				<div class="carouselCaption">
+					<h1>YOUR CONSUMER IS YOUR NEW CREATIVE</h1>
+					<h2>Share the videos of your audience</h2>
+					<button class="btn btn-normal btn-primary btn-lg btnBlue btnNormal linkScroll" data-target="getInTouchForm">GET IN TOUCH</button>
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+	<div id="sectionAbout" class="sectionAbout" section="2">
+		<div class="container">
+			<div class="row">
+				<div class="aboutInner">
+					<div class="aboutPart aboutPower">
+						<h2 class="textTitle">What We Believe</h2>
+						<p class="textIntro">With a high level of respect for both artists and audiences, Level Artists commits itself to bringing world-class artists of any and all genres to stages across North America.
+	By embracing innovation in all aspects, Level Artists will provide the music and entertainment industry with a forward-thinking approach to artist and project management and development.
+	In our interactions with artists, presenters, audiences and employees, Level Artists will always hold ourselves to a high standard of conduct and excellence.</p>
+					</div>
+					<div class="aboutPart aboutStatistic">
+						<div class="statistic">
+							<div class="statisticLeft">
+								<div id="percent_92" style="position: absolute"></div>
+								<h1>92%</h1>
+								<p>Success</p>
+							</div>
+							<div class="statisticRight">
+								<div id="percent_82" style="position: absolute"></div>
+								<h1>82%</h1>
+								<p>Real time updates</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="sectionHowItWork" class="sectionHowItWork" section="3">
+		<div class="container">
+			<div class="row">
+				<div class="howItWorkInner">
+					<div class="howItWork clearfix">
+						<div class="w-50 sectionText">
+							<h2 class="textTitle">Anderson .Paak</h2>
+							<p> Anderson is an upcoming rapper straight out of Oxnard, California. He scored some major with Dr. Dre after Dre heard “Suede” which is my favorite joint by him.</p>
+						</div>
+						<div class="w-50 sectionImg">
+							<img src="styles/custom/v1/images/a-paak.jpg">
+						</div>
+					</div>
+					<div class="howItWork clearfix">
+						<div class="w-50 sectionImg">
+							<img src="styles/custom/v1/images/esp-spa.jpg">
+						</div>
+						<div class="w-50 sectionText sectionTextRight">
+							<h2 class="textTitle">Esperanza Spalding</h2>
+							<p>Esperanza Emily Spalding is an American jazz bassist and singer. Spalding was raised in Portland, Oregon and was a musical prodigy, playing violin in the Chamber Music Society of Oregon at five years old.</p>
+						</div>
+					</div>
+					<div class="howItWork clearfix">
+						<div class="w-50 sectionText">
+							<h2 class="textTitle">Cirque Alfonse</h2>
+							<p>Cirque Alfonse grew out of the need to look back fondly at the past. A desire to have more time for family, friends and shared moments took hold.</p>
+						</div>
+						<div class="w-50 sectionImg">
+							<img src="styles/custom/v1/images/circ-a.jpg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="sectionTeam" class="sectionTeam" section="4">
+		<div class="container">
+			<div class="row">
+				<div class="teamInner">
+					<div class="teamGroup clearfix">
+						<h2 class="textTitle">THE TEAM</h2>
+						<div class="teamMember">
+							<img src="styles/custom/v1/images/kevin.jpg">
+							<h4>Paul Jacobs</h4>
+							<h4>Founder + Artist Manager</h4>
+						</div>
+						<div class="teamMember">
+							<img src="styles/custom/v1/images/jonas.jpg">
+							<h4>Andy Jones</h4>
+							<h4>Founder + Artist Manager</h4>
+						</div>
+					</div>
+					<div class="teamContent">
+						<div class="teamText">
+							<h2 class="textTitle">OUR CULTURE</h2>
+							<p>No better way than Humility, Hands on, Honesty and Humour to be Happy
+							Clients but partners
+							Collaboration + Flexibility = Agility
+							Our passions Music, Art and Lifestyle</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="getInTouchForm" class="contactContainer" section="5">
+		<div class="container">
+			<div class="row">
+				<div class="contactInner w-100">
+					<h3>GET IN TOUCH</h3>
+					<form name="contactForm">
+						<div class="form-group formGroupCustom">
+							<input id="name" type="text" class="form-control" name="lastName" placeholder="Your name">
+							<input id="email" type="text" class="form-control" name="emailAddress" placeholder="Your email address">
+							<input id="phone" type="text" class="form-control" name="phone" placeholder="Your Phone Number">
+						</div>
+						<div class="form-group formGroupCustom">
+							<select id="interest" class="form-control" name="area">
+								<option value="" disabled selected>Reason For Contact?</option>
+								<option value="Demo">Booking</option>
+								<option value="Partnership">Representation</option>
+								<option value="Contact">Contact</option>
+								<option value="News">Partnership</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+						<button id="btn-getInTouchForm" class="btn btn-normal btn-lg btnSubmitGetInTouch">SUBMIT</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="thanks" style="display:none">
+		<div class='middle'>
+		<p id="print-name"></p>
+		<p>Thank you for subscribing.</p>
+		<p>You will receive an email from us shortly</p>
+		<button id="btn-thanks" class="btnBlue btn-normal">OK</button>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="footerInner w-100">
+					<p>&copy; Level Artists 2017 - All rights reserved</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
