@@ -461,7 +461,7 @@ aside a:focus, aside a:active {
 .formGroupCustom {
 	outline: 0;
 }
-.formGroupCustom input {
+.formGroupCustom input, .formGroupCustom textarea {
 	background: #fff;
 	color: #0a090e;
 	border-radius: 0;
@@ -472,6 +472,10 @@ aside a:focus, aside a:active {
 	min-width: 220px;
 	display: inline-block;
 	height: 60px;
+}
+
+.formGroupCustom textarea {
+	resize: none;
 }
 .formGroupCustom input:focus {
 	border-color: transparent;

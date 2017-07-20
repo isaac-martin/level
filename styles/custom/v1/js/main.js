@@ -29,7 +29,7 @@ $(document).ready(function() {
 	 		success: function(data) {
 	 			$contactForm.append('<div class="alert alert--success">Message sent!</div>');
 				$(".alert--loading").remove();
-				$("#contactForm").fadeOut(3000);
+				$("#contactForm").fadeOut(1500);
 				console.log('Message Sent');
 	 		},
 	 		error: function(err) {
