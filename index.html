@@ -33,7 +33,7 @@
 						<a class="navbar-brand" id="logo" href="#"><img src="styles/custom/v1/images/logo.svg"></a>
 
 						<div class="collapse navbar-collapse" id="navbarHeaderLink">
-							<ul class="navbar-nav ml-auto">
+							<!-- <ul class="navbar-nav ml-auto">
 								<li class="nav-item">
 									<a class="nav-link linkScroll" data-target="sectionAbout" href="#"><span>About</span></a>
 								</li>
@@ -43,7 +43,7 @@
 								<li class="nav-item">
 									<a class="nav-link linkScroll" data-target="sectionTeam" href="#"><span>The team</span></a>
 								</li>
-							</ul>
+							</ul>-->
 						</div>
 					</nav>
 				</div>
@@ -66,9 +66,9 @@
 	</div>
 
 	<aside>
-		<a class="linkScroll" data-target="sectionAbout" href="#">About</a>
-		<a class="linkScroll" data-target="sectionHowItWork" href="#">Our Artists</a>
-		<a class="linkScroll" data-target="sectionTeam" href="#">The team</a>
+		<!-- <a class="linkScroll" data-target="sectionAbout" href="#">About</a> -->
+		<!-- <a class="linkScroll" data-target="sectionHowItWork" href="#">Our Artists</a>
+		<a class="linkScroll" data-target="sectionTeam" href="#">The team</a> -->
 	</aside>
 
 	<div id="pageDown" data-section="1"></div>
@@ -94,7 +94,7 @@
 				<div class="carouselCaption">
 					<h1>Bringing the best to stage.</h1>
 					<!-- <h2></h2> -->
-					<button class="btn btn-normal btn-primary btn-lg btnBlue btnNormal linkScroll" data-target="getInTouchForm">GET IN TOUCH</button>
+					<button class="btn btn-normal btn-primary btn-lg btnBlk btnNormal linkScroll" data-target="getInTouchForm">Get In Touch</button>
 				</div>
 			</div>
 			<!-- <div class="carousel-item " slide-id="1" style="opacity: 0;">
@@ -134,7 +134,7 @@
 	By embracing innovation in all aspects, Level Artists will provide the music and entertainment industry with a forward-thinking approach to artist and project management and development.
 	In our interactions with artists, presenters, audiences and employees, Level Artists will always hold ourselves to a high standard of conduct and excellence.</p>
 					</div>
-					<div class="aboutPart aboutStatistic">
+					<!-- <div class="aboutPart aboutStatistic">
 						<div class="statistic">
 							<div class="statisticLeft">
 								<div id="percent_92" style="position: absolute"></div>
@@ -147,13 +147,13 @@
 								<p>Real time updates</p>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="sectionHowItWork" class="sectionHowItWork" section="3">
+	<!-- <div id="sectionHowItWork" class="sectionHowItWork" section="3">
 		<div class="container">
 			<div class="row">
 				<div class="howItWorkInner">
@@ -187,9 +187,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div id="sectionTeam" class="sectionTeam" section="4">
+	<!-- <div id="sectionTeam" class="sectionTeam" section="4">
 		<div class="container">
 			<div class="row">
 				<div class="teamInner">
@@ -218,22 +218,25 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div id="getInTouchForm" class="contactContainer" section="5">
 		<div class="container">
 			<div class="row">
 				<div class="contactInner w-100">
 					<h3>GET IN TOUCH</h3>
-					<form name="contactForm">
+					<p>If you have any questions please use the form below and a member of the team will be in touch shortly.</p>
+					<form id="contactForm" method="POST">
 						<div class="form-group formGroupCustom">
 							<input id="name" type="text" class="form-control" name="lastName" placeholder="Your name">
 							<input id="email" type="text" class="form-control" name="emailAddress" placeholder="Your email address">
 							<input id="phone" type="text" class="form-control" name="phone" placeholder="Your Phone Number">
+							<textarea id="message" class="form-control" name="message" placeholder="Your Message"></textarea>
+
 						</div>
 						<div class="form-group formGroupCustom">
 							<select id="interest" class="form-control" name="area">
-								<option value="" disabled selected>Reason For Contact?</option>
+								<option value="" disabled selected>Reason For Contact</option>
 								<option value="Demo">Booking</option>
 								<option value="Partnership">Representation</option>
 								<option value="Contact">Contact</option>
@@ -241,18 +244,10 @@
 								<option value="Other">Other</option>
 							</select>
 						</div>
-						<button id="btn-getInTouchForm" class="btn btn-normal btn-lg btnSubmitGetInTouch">SUBMIT</button>
+						<button id="btn-getInTouchForm" class="btn btn-normal btn-lg btnSubmitGetInTouch">Send Enquiry</button>
 					</form>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div id="thanks" style="display:none">
-		<div class='middle'>
-		<p id="print-name"></p>
-		<p>Thank you for subscribing.</p>
-		<p>You will receive an email from us shortly</p>
-		<button id="btn-thanks" class="btnBlue btn-normal">OK</button>
 		</div>
 	</div>
 	<footer>

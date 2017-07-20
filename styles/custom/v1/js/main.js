@@ -6,6 +6,48 @@ var animateOnce = true;
 /************************ INIT THE PAGE *****************************/
 $(document).ready(function() {
 
+
+
+	/************************ FORM SPREE AJAX BABY ******************/
+
+
+		var $contactForm = $('#contactForm');
+
+	 $contactForm.submit(function(e) {
+	 	e.preventDefault();
+	 	var $submit = $('input:submit', $contactForm);
+	 	var defaultSubmitText = $submit.val();
+
+	 	$.ajax({
+	 		url: '//formspree.io/contact@isaacmartin.co',
+	 		method: 'POST',
+	 		data: $(this).serialize(),
+	 		dataType: 'json',
+	 		beforeSend: function() {
+	 			//$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+	 			$submit.attr('disabled', true).val('Sending message…');
+	 		},
+	 		success: function(data) {
+	 			//$contactForm.append('<div class="alert alert--success">Message sent!</div>');
+	 			$submit.val('Message sent!');
+	 			setTimeout(function() {
+	 				//$('.alert--success').remove();
+	 				$submit.attr('disabled', false).val(defaultSubmitText);
+	 			}, 5000);
+	 		},
+	 		error: function(err) {
+	 			//$contactForm.find('.alert--loading').hide();
+	 			//$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
+	 			$submit.val('Ops, there was an error.');
+	 			setTimeout(function() {
+	 				//$('.alert--error').remove();
+	 				$submit.attr('disabled', false).val(defaultSubmitText);
+	 			}, 5000);
+	 		}
+	 	});
+	 });
+
+
 	//*******************************************/
 	//video carousel
 	$('#carouselVideo ol li').click(function () {
@@ -35,30 +77,7 @@ $(document).ready(function() {
 
 	$('#thanks').hide()
 
-	//*******************************************/
-	//submission form
-	$('#btn-getInTouchForm').click(function(e){
-		e.preventDefault();
 
-		var data = {
-			name: $('#name').val(),
-			email:  $('#email').val() ,
-			interest:  $('#interest').val()
-		}
-
-		// var usersList = firebase.database().ref('interest-list');
-		// var newPostRef = usersList.push();
-		// newPostRef.set(data);
-
-		//console.log( ""++ " - "++" : "+ $('#interest').val() );
-		$('#print-name').text($('#name').val())
-		$('#thanks').show()
-	})
-	//*******************************************/
-
-	$('#btn-thanks').click(function(){
-		$('#thanks').hide()
-	})
 	//Scroll
 	$('.linkScroll').on('click', function(e) {
 		e.preventDefault();
@@ -72,11 +91,12 @@ $(document).ready(function() {
 	$('#pageDown').on('click', clickPageDown)
 
 	setHeightOfVideo();
-	specifySection();
+
+	// specifySection();
 
 	$(window).scroll(function(){
 		setHeightOfVideo();
-		specifySection();
+		// specifySection();
 		if($("#pageDown").attr("data-section") == 5) {
 			$("#pageDown").addClass("pageUp");
 		} else $("#pageDown").removeClass("pageUp");
@@ -87,14 +107,14 @@ $(document).ready(function() {
 	})
 
 	//percent motion
-	percent_82 = getCircleLoader('#percent_82');
-	percent_92 = getCircleLoader('#percent_92');
+	// percent_82 = getCircleLoader('#percent_82');
+	// percent_92 = getCircleLoader('#percent_92');
 	// percent_82.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 	// percent_82.text.style.fontSize = '2rem';
 
-	floating($('.media1'));
-	floating($('.media2'));
-	floating($('.media3'));
+	// floating($('.media1'));
+	// floating($('.media2'));
+	// floating($('.media3'));
 })
 
 /************************ CLICK DOWN BUTTON *****************************/
@@ -140,68 +160,68 @@ function clickPageDown(e){
 
 /************************ SECTION *****************************/
 
-function specifySection() {
-	var window_top     = $(window).scrollTop();
-	var top_space 	   = $('#sectionAbout').offset().top / 2;
-	var about_top      = $('#sectionAbout').offset().top - top_space;
-	var howItWork_top  = $('#sectionHowItWork').offset().top - top_space;
-	var team_top       = $('#sectionTeam').offset().top - top_space;
-	var getInTouch_top = $('#getInTouchForm').offset().top - top_space;
-	var percent_top	   = $('#percent_92').offset().top;
-
-	$('aside a').removeClass('active').removeClass('active-white').removeClass('active-blue');
-	$('body').removeClass("bg-color-black bg-color-gray bg-color-pink")
-
-	var duration = 300;
-
-	//Show Header
-	if (window_top >= about_top && window.innerWidth > 767) {
-		$('#header').fadeOut(duration);
-		$('#headerFixed').fadeIn(duration);
-		$('aside').fadeIn(duration);
-	} else {
-		$('#header').fadeIn(duration);
-		$('#headerFixed').fadeOut(duration);
-		$('aside').fadeOut(duration);
-	}
-
-	//what is the current section
-	var section_index = $('#pageDown').attr("data-section");
-
-	//we need to select the good get in touch bouton with the right background color
-	if (window_top < about_top) {
-		$('#pageDown').attr("data-section", 1);
-	} else if (window_top >= about_top && window_top < howItWork_top) {
-
-		//************************************************************/
-		//Percents animation when shown
-		var distance_percent_top = percent_top - window_top
-
-		if( distance_percent_top >= - $('#percent_92').height() * 0.3
-		 && distance_percent_top < window.innerHeight * .7){
-			  animatePercent()
-		 }
-		 //************************************************************/
-
-		$('aside a[data-target="sectionAbout"]').addClass('active-white');
-		$('#pageDown').attr("data-section", 2);
-		$('body').addClass("bg-color-black");
-
-	} else if (window_top >= howItWork_top && window_top < team_top) {
-		$('aside a[data-target="sectionHowItWork"]').addClass('active-blue');
-		$('#pageDown').attr("data-section", 3);
-		$('body').addClass("bg-color-gray");
-
-	} else if (window_top >= team_top && window_top < getInTouch_top) {
-		$('aside a[data-target="sectionTeam"]').addClass('active-white');
-		$('#pageDown').attr("data-section", 4);
-		$('body').addClass("bg-color-pink");
-
-	} else {
-		$('body').addClass("bg-color-gray");
-		$('#pageDown').attr("data-section", 5);
-	}
-}
+// function specifySection() {
+// 	var window_top     = $(window).scrollTop();
+// 	var top_space 	   = $('#sectionAbout').offset().top / 2;
+// 	var about_top      = $('#sectionAbout').offset().top - top_space;
+// 	var howItWork_top  = $('#sectionHowItWork').offset().top - top_space;
+// 	var team_top       = $('#sectionTeam').offset().top - top_space;
+// 	var getInTouch_top = $('#getInTouchForm').offset().top - top_space;
+// 	var percent_top	   = $('#percent_92').offset().top;
+//
+// 	$('aside a').removeClass('active').removeClass('active-white').removeClass('active-blue');
+// 	$('body').removeClass("bg-color-black bg-color-gray bg-color-pink")
+//
+// 	var duration = 300;
+//
+// 	//Show Header
+// 	if (window_top >= about_top && window.innerWidth > 767) {
+// 		$('#header').fadeOut(duration);
+// 		$('#headerFixed').fadeIn(duration);
+// 		$('aside').fadeIn(duration);
+// 	} else {
+// 		$('#header').fadeIn(duration);
+// 		$('#headerFixed').fadeOut(duration);
+// 		$('aside').fadeOut(duration);
+// 	}
+//
+// 	//what is the current section
+// 	var section_index = $('#pageDown').attr("data-section");
+//
+// 	//we need to select the good get in touch bouton with the right background color
+// 	if (window_top < about_top) {
+// 		$('#pageDown').attr("data-section", 1);
+// 	} else if (window_top >= about_top && window_top < howItWork_top) {
+//
+// 		//************************************************************/
+// 		//Percents animation when shown
+// 		var distance_percent_top = percent_top - window_top
+//
+// 		if( distance_percent_top >= - $('#percent_92').height() * 0.3
+// 		 && distance_percent_top < window.innerHeight * .7){
+// 			  animatePercent()
+// 		 }
+// 		 //************************************************************/
+//
+// 		$('aside a[data-target="sectionAbout"]').addClass('active-white');
+// 		$('#pageDown').attr("data-section", 2);
+// 		$('body').addClass("bg-color-black");
+//
+// 	} else if (window_top >= howItWork_top && window_top < team_top) {
+// 		$('aside a[data-target="sectionHowItWork"]').addClass('active-blue');
+// 		$('#pageDown').attr("data-section", 3);
+// 		$('body').addClass("bg-color-gray");
+//
+// 	} else if (window_top >= team_top && window_top < getInTouch_top) {
+// 		$('aside a[data-target="sectionTeam"]').addClass('active-white');
+// 		$('#pageDown').attr("data-section", 4);
+// 		$('body').addClass("bg-color-pink");
+//
+// 	} else {
+// 		$('body').addClass("bg-color-gray");
+// 		$('#pageDown').attr("data-section", 5);
+// 	}
+// }
 
 
 /************************ VIDEO *****************************/
@@ -258,32 +278,34 @@ function getCircleLoader(elt){
 }
 
 /************************ SIMPLE MAP FUNCTION *****************************/
-var mapValue = [];
-var mapHash = [];
+// var mapValue = [];
+// var mapHash = [];
+//
+// function getMap(div){
+// 	var i = mapHash.indexOf(div);
+//
+// 	if (i < 0){
+// 		mapHash.push(div);
+// 		mapValue.push(0);
+//
+// 		return 0;
+// 	}
+//
+// 	return mapValue[i];
+// }
+//
+// function setMap(div, value){
+// 	var i = mapHash.indexOf(div);
+//
+// 	if (i < 0){
+// 		mapHash.push(div);
+// 		mapValue.push(value);
+// 	}else{
+// 		 mapValue[i] = value;
+// 	}
+// }
 
-function getMap(div){
-	var i = mapHash.indexOf(div);
 
-	if (i < 0){
-		mapHash.push(div);
-		mapValue.push(0);
-
-		return 0;
-	}
-
-	return mapValue[i];
-}
-
-function setMap(div, value){
-	var i = mapHash.indexOf(div);
-
-	if (i < 0){
-		mapHash.push(div);
-		mapValue.push(value);
-	}else{
-		 mapValue[i] = value;
-	}
-}
 
 /************************ ANIMATION *****************************/
 const MAX_TIME 		= 10000;
