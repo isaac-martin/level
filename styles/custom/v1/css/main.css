@@ -538,6 +538,14 @@ aside a:focus, aside a:active {
 	left: 35%;
 }
 
+
+/* == form == */
+
+.alert--loading {
+	color: white;
+	font-size: 24px;
+}
+
 /*== footer ==*/
 footer .footerInner {
 	padding: 3% 0;
