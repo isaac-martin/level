@@ -541,7 +541,7 @@ aside a:focus, aside a:active {
 
 /* == form == */
 
-.alert--loading {
+.alert {
 	color: white;
 	font-size: 24px;
 }

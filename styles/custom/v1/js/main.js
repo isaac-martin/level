@@ -19,7 +19,7 @@ $(document).ready(function() {
 	 	var defaultSubmitText = $submit.val();
 
 	 	$.ajax({
-				url: '//formspree.io/contact@isaacmartin.co',
+			url: '//formspree.io/contact@isaacmartin.co',
 	 		method: 'POST',
 	 		data: $(this).serialize(),
 	 		dataType: 'json',
@@ -28,13 +28,13 @@ $(document).ready(function() {
 	 		},
 	 		success: function(data) {
 	 			$contactForm.append('<div class="alert alert--success">Message sent!</div>');
-				$contactForm.fadeOut(3000);
+				$(".alert--loading").remove();
+				$("#contactForm").fadeOut(3000);
 				console.log('Message Sent');
 	 		},
 	 		error: function(err) {
 	 			$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
 	 			$('.alert--error').remove();
-				console.log('Ops, there was an error');
 	 		}
 	 	});
 	 });
