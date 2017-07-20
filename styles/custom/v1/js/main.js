@@ -19,7 +19,7 @@ $(document).ready(function() {
 	 	var defaultSubmitText = $submit.val();
 
 	 	$.ajax({
-			// 	url: '//formspree.io/contact@isaacmartin.co',
+				url: '//formspree.io/contact@isaacmartin.co',
 	 		method: 'POST',
 	 		data: $(this).serialize(),
 	 		dataType: 'json',
