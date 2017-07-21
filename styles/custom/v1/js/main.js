@@ -11,33 +11,33 @@ $(document).ready(function() {
 	/************************ FORM SPREE AJAX BABY ******************/
 
 
-		var $contactForm = $('#contactForm');
-
-	 $contactForm.submit(function(e) {
-	 	e.preventDefault();
-	 	var $submit = $('input:submit', $contactForm);
-	 	var defaultSubmitText = $submit.val();
-
-	 	$.ajax({
-			url: '//formspree.io/contact@levelartists.co',
-	 		method: 'POST',
-	 		data: $(this).serialize(),
-	 		dataType: 'json',
-	 		beforeSend: function() {
-	 			$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
-	 		},
-	 		success: function(data) {
-	 			$contactForm.append('<div class="alert alert--success">Message sent!</div>');
-				$(".alert--loading").remove();
-				$("#contactForm").fadeOut(1500);
-				console.log('Message Sent');
-	 		},
-	 		error: function(err) {
-	 			$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
-	 			$('.alert--error').remove();
-	 		}
-	 	});
-	 });
+	// 	var $contactForm = $('#contactForm');
+	 //
+	//  $contactForm.submit(function(e) {
+	//  	e.preventDefault();
+	//  	var $submit = $('input:submit', $contactForm);
+	//  	var defaultSubmitText = $submit.val();
+	 //
+	//  	$.ajax({
+	// 		url: '//formspree.io/contact@levelartists.co',
+	//  		method: 'POST',
+	//  		data: $(this).serialize(),
+	//  		dataType: 'json',
+	//  		beforeSend: function() {
+	//  			$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+	//  		},
+	//  		success: function(data) {
+	//  			$contactForm.append('<div class="alert alert--success">Message sent!</div>');
+	// 			$(".alert--loading").remove();
+	// 			$("#contactForm").fadeOut(1500);
+	// 			console.log('Message Sent');
+	//  		},
+	//  		error: function(err) {
+	//  			$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
+	//  			$('.alert--error').remove();
+	//  		}
+	//  	});
+	//  });
 
 
 	//*******************************************/
